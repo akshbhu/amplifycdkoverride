@@ -5,7 +5,7 @@ import {AmplifyAPIResourceProps, amplifyApiServiceResource, apiServiceResourceSt
 import {overrideApiProps} from  '../amplify/api/override'
 
 
-const resourceDir = path.join(process.cwd(), `amplify/storage/apiresource`);
+const resourceDir = path.join(process.cwd(), `amplify/api/apiresource`);
 
 const cliInputs = addApi();
 compileApi(cliInputs);
@@ -38,7 +38,7 @@ export function compileApi(cliInputs: any) {
   const schemaPath = cliInputs.graphqlSchemaPath;
 
   // parse graphql schema to parse directive using schema Path
-
+  // generate amplify resource using cliInputs and parsed schema
   const amplifyApiResource: AmplifyAPIResourceProps = {
     appSyncService : {
       GraphQLAPI: {

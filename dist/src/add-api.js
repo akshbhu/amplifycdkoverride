@@ -28,7 +28,7 @@ const path_1 = __importDefault(require("path"));
 const cdk = __importStar(require("@aws-cdk/core"));
 const api_1 = require("./types/api");
 const override_1 = require("../amplify/api/override");
-const resourceDir = path_1.default.join(process.cwd(), `amplify/storage/apiresource`);
+const resourceDir = path_1.default.join(process.cwd(), `amplify/api/apiresource`);
 const cliInputs = addApi();
 compileApi(cliInputs);
 function addApi() {
@@ -47,6 +47,7 @@ function compileApi(cliInputs) {
     // Form AmplifyStorageResource object from cli-inputs.json
     const schemaPath = cliInputs.graphqlSchemaPath;
     // parse graphql schema to parse directive using schema Path
+    // generate amplify resource using cliInputs and parsed schema
     const amplifyApiResource = {
         appSyncService: {
             GraphQLAPI: {
