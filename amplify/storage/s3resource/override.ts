@@ -11,11 +11,20 @@ export function overrideProps(props: AmplifyStorageResourceProps ):void {
     //props.S3Service.S3Bucket.bucketName = "DONE";
 
     props.S3Service.S3Bucket.bucketName = "nikhilsbucket";
-    props.S3Service.S3Bucket.objectLockEnabled = true;
+    props.S3Service.S3Bucket.objectLockEnabled= true;
     props.S3Service.S3AuthPublicPolicy.policyName = "my_custom_name2";
     
     // props.S3Service.S3AuthPublicPolicy.policyName = "my_custom_name";
 
+}
+
+export function overrideProps1():AmplifyStorageResourceProps {
+    let props: AmplifyStorageResourceProps = {};
+    //props.S3Service.S3Bucket.bucketName = "DONE";
+    props.S3Service.S3Bucket.bucketName = "nikhilsbucket";
+    props.S3Service.S3Bucket.objectLockEnabled= true;
+    props.S3Service.S3AuthPublicPolicy.policyName = "my_custom_name2";
+    return props;
 }
 
 export function overrideStack(stack: S3ServiceResourceStack):void {

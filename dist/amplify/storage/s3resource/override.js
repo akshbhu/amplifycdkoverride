@@ -19,7 +19,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.S3ServiceResourceStackOverride = exports.overrideStack = exports.overrideProps = void 0;
+exports.S3ServiceResourceStackOverride = exports.overrideStack = exports.overrideProps1 = exports.overrideProps = void 0;
 const s3 = __importStar(require("@aws-cdk/aws-s3"));
 const cdk = __importStar(require("@aws-cdk/core"));
 function overrideProps(props) {
@@ -34,6 +34,15 @@ function overrideProps(props) {
     // props.S3Service.S3AuthPublicPolicy.policyName = "my_custom_name";
 }
 exports.overrideProps = overrideProps;
+function overrideProps1() {
+    let props = {};
+    //props.S3Service.S3Bucket.bucketName = "DONE";
+    props.S3Service.S3Bucket.bucketName = "nikhilsbucket";
+    props.S3Service.S3Bucket.objectLockEnabled = true;
+    props.S3Service.S3AuthPublicPolicy.policyName = "my_custom_name2";
+    return props;
+}
+exports.overrideProps1 = overrideProps1;
 function overrideStack(stack) {
     new s3.CfnBucket(stack, "MySecondBucket", {
         bucketName: "MySecondBucket"

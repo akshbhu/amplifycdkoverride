@@ -1,0 +1,17 @@
+{
+    "Resources": {
+        "randomTable": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "KeySchema": [
+                    {
+                        "AttributeName": "id",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "BillingMode": "PROVISIONED",
+                "TableName": "randomTable"
+            }
+        }
+    }
+}

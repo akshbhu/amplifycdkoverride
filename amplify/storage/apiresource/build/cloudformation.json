@@ -1,0 +1,32 @@
+{
+    "Resources": {
+        "GraphQLAPI": {
+            "Type": "AWS::AppSync::GraphQLApi",
+            "Properties": {
+                "AuthenticationType": "AMAZON_COGNITO_USER_POOLS",
+                "Name": "testapi",
+                "XrayEnabled": true
+            }
+        },
+        "GraphQLSchema": {
+            "Type": "AWS::AppSync::GraphQLSchema",
+            "Properties": {
+                "ApiId": {
+                    "Fn::GetAtt": [
+                        "GraphQLAPI",
+                        "apiid"
+                    ]
+                }
+            }
+        },
+        "randomTable": {
+            "Type": "AWS::CloudFormation::Stack",
+            "Properties": {
+                "TemplateURL": "randompath"
+            },
+            "DependsOn": [
+                "GraphQLSchema"
+            ]
+        }
+    }
+}

@@ -7,14 +7,17 @@
     "build": "tsc",
     "watch": "tsc -w",
     "add-storage": "node dist/src/add-storage.js",
+    "add-api": "node dist/src/add-api.js",
     "push": "node dist/src/push.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "import-cfn": "node dist/src/importResource.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@aws-cdk/aws-cloudformation": "^1.98.0",
     "@aws-cdk/aws-s3": "^1.98.0",
+    "@aws-cdk/cloudformation-include": "^1.98.0",
     "@types/fs-extra": "^9.0.11",
     "aws-cdk": "^1.98.0",
     "fs-extra": "^9.1.0"

@@ -1,3 +1,17 @@
 {
-    "bucketName": "mybucketnamexyzidhhdjf"
+    "apiName": "myawesomebucket",
+    "authConfig": {
+        "defaultAuthentication": {
+          "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+          "userPoolConfig": {
+            "userPoolId": "authi7169d15cc72a"
+          }
+        },
+        "additionalAuthenticationProviders": [
+          {
+            "authenticationType": "AWS_IAM"
+          }
+        ]
+      },
+    "apiKeyDescription": "random"
 }
